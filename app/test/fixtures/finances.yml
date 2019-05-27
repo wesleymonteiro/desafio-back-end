@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: 1
+  movement_datetime: 2019-05-27 19:09:33
+  value: 1.5
+  cpf: 1
+  card_number: 
+  store_name: MyString
+
+two:
+  kind: 1
+  movement_datetime: 2019-05-27 19:09:33
+  value: 1.5
+  cpf: 1
+  card_number: 
+  store_name: MyString
