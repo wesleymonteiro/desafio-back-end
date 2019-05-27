@@ -1,0 +1,23 @@
+html
+  head
+    title App
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  
+  body
+    - if user_signed_in?
+      header
+        .navbar.navbar-default
+          .container-fluid
+            .navbar-header
+              = link_to "Home", :root, class: "navbar-brand"
+            / = render "layouts/menu"
+    .container
+      .col-md-12.text-center
+        - if notice.present?
+          p.alert.alert-success = notice
+        - elsif alert.present?
+          p.alert.alert-danger = alert
+      = yield
