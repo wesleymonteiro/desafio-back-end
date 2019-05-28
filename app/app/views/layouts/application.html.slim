@@ -1,6 +1,6 @@
 html
   head
-    title App
+    title Desafio Back-end
     = csrf_meta_tags
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -14,8 +14,8 @@ html
             .navbar-header
               = link_to "Home", :root, class: "navbar-brand"
             ul.nav.navbar-nav.navbar-right
-              li = link_to "Logout", [:destroy, :user, :session], method: :delete,
-                            data: { confirm: "Are you sure?" }
+              li = link_to "Desconectar", [:destroy, :user, :session], method: :delete,
+                            data: { confirm: "Tem certeza que deseja desconectar?" }
     .container
       .col-md-12.text-center
         - if notice.present?

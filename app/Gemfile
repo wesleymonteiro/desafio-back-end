@@ -22,7 +22,6 @@ gem 'devise'
 gem 'slim'
 gem 'bootstrap-sass'
 gem 'bootstrap'
-gem 'simple_form'
 gem 'mini_racer'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

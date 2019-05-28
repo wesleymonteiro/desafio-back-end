@@ -7,5 +7,7 @@ class FinancesController < ApplicationController
   end
 
   def create
+    puts params[:file]
+    cnab = File.open(params[:file])
   end
 end
