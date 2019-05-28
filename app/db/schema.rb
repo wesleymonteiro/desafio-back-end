@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190527222714) do
+ActiveRecord::Schema.define(version: 20190528001420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,18 @@ ActiveRecord::Schema.define(version: 20190527222714) do
     t.integer "kind"
     t.datetime "movement_datetime"
     t.float "value"
-    t.integer "cpf"
-    t.integer "card_number"
-    t.string "store_owner_name"
-    t.string "store_name"
+    t.string "cpf"
+    t.string "card_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "store_id"
+    t.index ["store_id"], name: "index_finances_on_store_id"
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string "name"
+    t.string "owner"
+    t.float "balance", default: 0.0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,4 +47,5 @@ ActiveRecord::Schema.define(version: 20190527222714) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "finances", "stores"
 end

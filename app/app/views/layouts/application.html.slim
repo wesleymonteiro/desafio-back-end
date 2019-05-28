@@ -13,7 +13,9 @@ html
           .container-fluid
             .navbar-header
               = link_to "Home", :root, class: "navbar-brand"
-            / = render "layouts/menu"
+            ul.nav.navbar-nav.navbar-right
+              li = link_to "Logout", [:destroy, :user, :session], method: :delete,
+                            data: { confirm: "Are you sure?" }
     .container
       .col-md-12.text-center
         - if notice.present?

@@ -1,2 +1,33 @@
-.col-md-12.text-center
-  | Arroy!
+.page-header
+  h2 Movimentações Financeiras
+
+= link_to "Incluir Movimentações", new_finance_path, class: 'btn btn-success'
+
+.col-md-12 style="margin-top: 15px"
+  - @stores.each do |store|
+    .panel.panel-default
+      .panel-heading
+        = store.name
+      .panel-body
+        .col-md-6.text-center
+          = "Dono da loja: #{store.owner}"
+        .col-md-6.text-center
+          = "Saldo bancário: #{store.balance}"
+        .col-md-12
+          .table-responsive
+            table.table.table-striped.table-hover
+              thead
+                tr
+                  th Tipo
+                  th CPF
+                  th Cartão
+                  th Data
+                  th Valor
+              tbody
+                - store.finances.each do |finance|
+                  tr
+                    td = finance.kind
+                    td = finance.formatted_cpf
+                    td = finance.formatted_card_number
+                    td = finance.formatted_movement_datetime
+                    td = finance.value
