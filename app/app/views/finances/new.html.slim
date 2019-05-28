@@ -1,8 +1,10 @@
 .page-header
   h2 Novas Movimentações
 
-.col-md-4
-  label Escolha o arquivo a ser analizado
-  input type="file"
-  p style="color: grey; font-size: 14px; margin-top: 4px"
-    | O arquivo deve ser um .txt, contendo a documentação do CNAB para que os dados sejam adicionados corretamente no banco
+.col-md-6
+  = simple_form_for(:finances, url: finances_path) do |f|
+    .panel.panel-default
+      .panel-body
+        = f.input :file, label: "Escolha o arquivo a ser analizado", as: :file,
+          hint: "O arquivo deve ser um .txt, contendo a documentação do CNAB para que os dados sejam adicionados corretamente no banco" 
+    = f.button :submit, "Criar", class: "btn btn-primary"
