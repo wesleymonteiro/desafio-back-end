@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Versions
+  -
+  - Ruby: 2.5.3
+  - Rails: 5.1.7
 
-Things you may want to cover:
+* How to use
+  -
+  - run `bundle install`.
+  - after done, start server with `rails s`.
+  - create an account or log in.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run tests
+  -
+  - The tests was made using rspec. To run, simply use `rspec`.
