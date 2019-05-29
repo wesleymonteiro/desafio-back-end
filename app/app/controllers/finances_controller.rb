@@ -19,7 +19,7 @@ class FinancesController < ApplicationController
       cpf = movement[19, 11]
       card_number = movement[30, 12]
       hour = movement[42, 6].insert(4, ':').insert(2, ':')
-      datetime = "#{data} #{hour}".to_datetime
+      datetime = "#{data} #{hour} -3".to_datetime
 
       store_owner = movement[48, 14]
       store_name = movement[62, 19]

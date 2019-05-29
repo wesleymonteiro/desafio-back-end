@@ -29,6 +29,6 @@ class Finance < ApplicationRecord
   end
 
   def formatted_value
-    "R$ #{"%.2f" % (value)}"
+    "R$ #{"%.2f" % value}"
   end
 end
