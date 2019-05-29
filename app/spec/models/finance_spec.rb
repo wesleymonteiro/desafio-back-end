@@ -18,10 +18,10 @@ RSpec.describe Finance, type: :model do
 
   describe "methods" do
     before do
-      @user = User.create(email: "user@email.com", password: "password", password_confirmation:"password")
-      @store = Store.create(name: "test's store", owner: 'Sir Test', user: @user)
+      user = User.create(email: "user@email.com", password: "password", password_confirmation:"password")
+      store = Store.create(name: "test's store", owner: 'Sir Test', user: user)
       @finance = Finance.create(kind: 1, movement_datetime: '14-11-2016 22:00'.to_datetime, value: 100, cpf: "12345678910",
-                                card_number: "1234****5678", store: @store)
+                                card_number: "1234****5678", store: store)
     end
 
     describe "#formatted_cpf" do

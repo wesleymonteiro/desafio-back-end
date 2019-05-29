@@ -7,6 +7,10 @@ class FinancesController < ApplicationController
   end
 
   def create
+    unless params[:finances][:file]
+      flash[:error] = "Erro, tente novamente mais tarde."
+      redirect_to finances_path
+    end
     cnab = params[:finances][:file].read
     movements = []
     cnab.each_line do |line|
@@ -32,7 +36,6 @@ class FinancesController < ApplicationController
         store.balance += is_kind_an_exit?(kind) ? -value : value
         store.save
       else
-        puts finance.errors
         flash[:error] = "Erro, tente novamente mais tarde."
         redirect_to finances_path
         return

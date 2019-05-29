@@ -16,8 +16,8 @@ RSpec.describe Store, type: :model do
 
   describe "methods" do
     before do
-      @user = User.create(email: "user@email.com", password: "password", password_confirmation:"password")
-      @store = Store.create(name: "test's store", owner: 'Sir Test', user: @user, balance: 4500)
+      user = User.create(email: "user@email.com", password: "password", password_confirmation:"password")
+      @store = Store.create(name: "test's store", owner: 'Sir Test', user: user, balance: 4500)
     end
 
     describe "#formatted_balance" do

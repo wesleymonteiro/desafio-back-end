@@ -26,6 +26,7 @@ RSpec.configure do |config|
   config.before(:all, type: :feature) do
     Capybara.server = :puma, { Silent: true }
   end
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end
 
 Shoulda::Matchers.configure do |config|
